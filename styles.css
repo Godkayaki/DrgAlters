@@ -27,6 +27,19 @@ body{
   padding: 32px 16px;
 }
 
+h1{
+  color: #3471eb; /* or any color you like */
+}
+
+h2{
+  color: #ff5a5a; /* or any color you like */
+}
+
+.highlight {
+  color: #e63946; /* your chosen color */
+  font-weight: 600; /* optional, makes it stand out */
+}
+
 /* container */
 .container{
   max-width: var(--container-max);
@@ -87,9 +100,9 @@ body{
   height: 200px;             /* keep square for perfect circle */
   border-radius: 50%;       /* make it circular */
   object-fit: cover;        /* fills circle without stretching */
-  border: 2px solid #ccc;   /* optional border for style */
+  border: 4px solid #a39dff;   /* optional border for style */
   z-index: 1000;            /* above other content */
-  background: white;        /* optional, white circle behind logo */
+  background: #a39dff;        /* optional, white circle behind logo */
 }
 
 .main-nav{
@@ -215,7 +228,7 @@ body{
   margin-top: 20px;             /* spacing from the content above */
   margin-bottom: 20px;          /* spacing from the bottom of the page */
   font-family: "JetBrains Mono", monospace;
-  border-top: 1px solid #ccc;
-  padding-top: 8px;
-  padding-bottom: 4px;
+  /* border-top: 1px solid #ccc;*/
+  padding-top: 4px;
+  padding-bottom: 20px;
 }
