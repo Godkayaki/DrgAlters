@@ -32,24 +32,22 @@ document.addEventListener("DOMContentLoaded", () => {
   const lightbox = document.getElementById("lightbox");
   const lightboxImg = document.getElementById("lightbox-img");
 
+    // Open lightbox
   images.forEach(img => {
-    img.addEventListener("click", () => {
+    img.addEventListener('click', () => {
       lightboxImg.src = img.src;
-      lightbox.classList.remove("hidden");
+      lightbox.classList.add('visible');
     });
   });
 
-  // Close when clicking the background
-  lightbox.addEventListener("click", () => {
-    lightbox.classList.add("hidden");
-    lightboxImg.src = "";
-  });
-
-  // Close on Escape key
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") {
-      lightbox.classList.add("hidden");
-      lightboxImg.src = "";
+  // Close lightbox when clicking outside the image
+  lightbox.addEventListener('click', (e) => {
+    // Only close if the background itself was clicked
+    if (e.target === lightbox) {
+      lightbox.classList.remove('visible');
+      setTimeout(() => {
+        lightboxImg.src = '';
+      }, 400); // match CSS transition duration
     }
-  });
+  });  
 });
