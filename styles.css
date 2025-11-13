@@ -223,13 +223,6 @@ h2{
   }
 }
 
-/* 1 column on mobile */
-@media (max-width: 500px) {
-  .image-grid-four {
-    grid-template-columns: 1fr;
-  }
-}
-
 /* Lightbox base styles */
 .lightbox {
   position: fixed;
