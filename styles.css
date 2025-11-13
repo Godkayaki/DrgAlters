@@ -60,6 +60,7 @@ h2{
   letter-spacing: 0.06em;
   text-align: left; /* ensure left-aligned */
   margin-bottom: 8px;
+  max-width: 70%;
 }
 
 .site-description {
@@ -96,7 +97,10 @@ h2{
   position: absolute;       /* take it out of normal flow */
   top: 20px;                /* distance from top */
   right: 20px;              /* distance from right edge */
-  width: 200px;              /* diameter of the circle */
+  
+  /*width: 200px;              /* diameter of the circle */
+  width: auto;
+  
   height: 200px;             /* keep square for perfect circle */
   border-radius: 50%;       /* make it circular */
   object-fit: cover;        /* fills circle without stretching */
@@ -167,22 +171,54 @@ h2{
 }
 .back-link a:hover{ border-bottom-color: #bbb; }
 
-/* Responsive tweaks */
+/* ✅ Responsive fix for smaller screens */
 @media (max-width: 768px) {
-  .header-flex {
+  .site-header .container {
     flex-direction: column;
-    align-items: flex-start; /* keep title left-aligned */
+    align-items: flex-start;
   }
-  .header-right {
-    margin-top: 12px;
+
+  .site-title-group {
+    max-width: 100%;
+    text-align: left;
+  }
+
+  .site-logo img {
+    margin-top: 1rem;
+    height: 80px;
+  }
+}
+
+/* ✅ 3 columns on medium screens */
+@media (max-width: 1200px) {
+  .image-grid-four {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ✅ 2 columns on tablets */
+@media (max-width: 800px) {
+  .image-grid-four {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ✅ 1 column on mobile */
+@media (max-width: 500px) {
+  .image-grid-four {
+    grid-template-columns: 1fr;
+  }
+
+  .image-grid-four img {
+    width: 90%;
+    margin: 0 auto; /* center the image a bit */
   }
 }
 
 .image-grid-four {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);  /* exactly 4 columns */
-  gap: 16px;
-  margin: 24px 0;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem; /* space between images */
 }
 
 .image-grid-four .grid-item img {
